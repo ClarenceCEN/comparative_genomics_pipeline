@@ -1,2 +1,2 @@
-# comparative_genomics_pipeline
+# Comparative Genomics Pipeline
  
