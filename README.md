@@ -17,7 +17,7 @@ Download the protein sequences into one file.
 	`nohup /plus/work/soft/ORTHOMCLV1.4/orthomcledit.pl --mode 1 --fa_files LP16.fasta,LPP8.fasta,ST3.fasta,WCF.fasta,ZJ3.fasta &`
 	This step costs a long time to run.
 
-5. 
+5. Step 4 will generate `nohup.out` file. Just run `tail nohup.out` to check the results.
 
 
 
