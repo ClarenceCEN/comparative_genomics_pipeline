@@ -16,7 +16,13 @@ Download the protein sequences into one file.
 	`cp *.fasta /plus/work/soft/ORTHOMCLV1.4/sample_data`
 4. Use `pan_genome/file_name_join.sh` to generate the string that joins the file names with comma. 
 	
-	e.g.`nohup /plus/work/soft/ORTHOMCLV1.4/orthomcledit.pl --mode 1 --fa_files LP16.fasta,ST3.fasta &`
+	e.g.
+
+	`bash file_name_join.sh`
+
+	Then copy the string and run the following code, replace 'LP16.fasta,ST3.fasta' with the string you just copied.
+
+	`nohup /plus/work/soft/ORTHOMCLV1.4/orthomcledit.pl --mode 1 --fa_files LP16.fasta,ST3.fasta &`
 	
 	This step costs a long time to run.
 
