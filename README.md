@@ -28,7 +28,8 @@ Download the protein sequences into one file.
 
 5. Step 4 will generate `nohup.out` file. Just run `tail nohup.out` to check the results.
 
-	`Final ORTHOMCL Result: /plus/work/soft/ORTHOMCLV1.4/Nov_2/all_orthomcl.out generated!!!`
+	
+	> Final ORTHOMCL Result: /plus/work/soft/ORTHOMCLV1.4/Nov_2/all_orthomcl.out generated!!!
 
 	And we can copy that output file to current path.
 
