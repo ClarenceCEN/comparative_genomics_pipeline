@@ -29,6 +29,7 @@ Download the protein sequences into one file.
 	`cp /plus/work/soft/ORTHOMCLV1.4/Nov_2/all_orthomcl.out ./`
 
 6. Generate species information table
+
 	`ls *.fasta |awk -F'.fasta' '{print $1"\t"$0}' > faa.list`
 	`/plus/work/soft/ORTHOMCLV1.4/orthomcl2speciesedit.pl all_orthomcl.out faa.list`
 
