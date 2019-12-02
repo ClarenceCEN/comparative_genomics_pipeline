@@ -9,6 +9,7 @@ Download the protein sequences into one file.
 
 	`mkdir -p othomcl; cd othomcl`
 2. Use `/pan_genome/orth_adj.sh` to adjust the headers of the faa files and to generate fasta files.
+	`bash orth_adj.sh`
 
 3. Copy all the fasta files into working directory.
 
@@ -27,7 +28,10 @@ Download the protein sequences into one file.
 
 	`cp /plus/work/soft/ORTHOMCLV1.4/Nov_2/all_orthomcl.out ./`
 
-6. 
+6. Generate species information table
+	`ls *.fasta |awk -F'.fasta' '{print $1"\t"$0}' > faa.list`
+	`/plus/work/soft/ORTHOMCLV1.4/orthomcl2speciesedit.pl all_orthomcl.out faa.list`
+
 
 
 
