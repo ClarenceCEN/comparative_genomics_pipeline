@@ -1,18 +1,20 @@
 #!/bin/bash
 
 
-for file in ./pan_genome_data/*.faa
+for file in ./*.faa
 do
 name=`basename $file`
 output_name="${name%.*}nr.xls"
 output_name2="${name%.*}.function"
 echo 'check '$output_name
 if [ ! -f "$output_name" ]; then
-	#echo $output_name
-	echo '----'${name%.*}'-----'
-	/plus/work/soft/bin/blast/blastp -query ${name%.*}.faa -db /plus/CCFM/stu02/cs/L._plantarum/lab/pan/data/nr_1590 -evalue 1e-10 -outfmt 5 -out ${name%.*}.out -num_threads 40
-	/plus/work/soft/bin/blast/Blast2table -format 10 -xml ${name%.*}.out > ${name%.*}nr.xls -numhsps 1
-	rm ${name%.*}.out
+	echo 'nr annotation file missing!!'
+	stop
+#	#echo $output_name
+#	echo '----'${name%.*}'-----'
+#	/plus/work/soft/bin/blast/blastp -query ${name%.*}.faa -db /plus/CCFM/stu02/cs/L._plantarum/lab/pan/data/nr_1590 -evalue 1e-10 -outfmt 5 -out ${name%.*}.out -num_threads 40
+#	/plus/work/soft/bin/blast/Blast2table -format 10 -xml ${name%.*}.out > ${name%.*}nr.xls -numhsps 1
+#	rm ${name%.*}.out
 fi
 if [ ! -f "$output_name2" ]; then
 	cat ${name%.*}.faa |sed  /^$/d  > ${name%.*}.fan
@@ -33,6 +35,8 @@ done
 rm *.fnnn
 rm *.fan
 rm *merge.xls
+
+mkdir ../input 
 
 mv *.function ../input/
 mv *.pep ../input/
