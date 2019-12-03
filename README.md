@@ -18,7 +18,7 @@ Download the protein sequences into one file.
 	
 	e.g.
 
-	`bash file_name_join.sh`
+	`bash file_name_join_orth.sh`
 
 	Then copy the string and run the following code, replace 'LP16.fasta,ST3.fasta' with the string you just copied.
 
@@ -57,9 +57,26 @@ Download the protein sequences into one file.
 
 	`cp /$PATH/*nr.xls ./`
 
-3. run `pan_genome.sh` under `/PGAP/pan_genome_data/` to generate other needed file into `PGAP/input`
+3. run `bash pan_genome.sh` under `~/PGAP/pan_genome_data/` to generate other needed file into `~/PGAP/input`
 
-4. 
+4. Go back to working directory `cd ~/PGAP/`,run `bash file_name_join_pan.sh` to get the string, which are files names joined with "+". Copy that string and run
+
+	`perl /plus/work/soft/PGAP-1.2.1/PGAPedit.pl -strains WCF+ST3+ZJ3+LPP8+LP16 -input input/ -output output --cluster -pangenome --variation --evolution --function -method MP --thread 1 --bootstrap 500`
+	
+	(replace "WCF+ST3+ZJ3+LPP8+LP16" with the string you just copied)
+
+5. It will raise error. Run `python check_err.py` and `python delete.py` to delete redandunt genes in files under `./input/`
+	
+6. Run this again:
+
+	`perl /plus/work/soft/PGAP-1.2.1/PGAPedit.pl -strains WCF+ST3+ZJ3+LPP8+LP16 -input input/ -output output --cluster -pangenome --variation --evolution --function -method MP --thread 1 --bootstrap 500`
+
+	This step will cost a very very very very long time and very very very very big space. Not recommended.
+
+7. Analysis the results.
+
+
+
 
 
 
