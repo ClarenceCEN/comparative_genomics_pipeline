@@ -43,7 +43,19 @@ Download the protein sequences into one file.
 
 
 
+## Pan-genome Analysis
 
+1. `mkdir PGAP; cd PGAP` to create working directory
+
+2. move all the faa files as well as cog anotation files into one data file
+
+	`mkdir pan_genome_data`
+
+	`mv /$PATH/*.faa pan_genome_data/`
+
+	`mv /$PATH/*_cog.xls pan_genome_data/`
+
+3. run `pan_genome/pan_genome.sh` under working directory to 
 
 
 
