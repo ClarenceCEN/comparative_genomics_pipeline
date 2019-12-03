@@ -9,7 +9,7 @@ output_name2="${name%.*}.function"
 echo 'check '$output_name
 if [ ! -f "$output_name" ]; then
 	echo 'nr annotation file missing!!'
-	stop
+	exit 1
 #	#echo $output_name
 #	echo '----'${name%.*}'-----'
 #	/plus/work/soft/bin/blast/blastp -query ${name%.*}.faa -db /plus/CCFM/stu02/cs/L._plantarum/lab/pan/data/nr_1590 -evalue 1e-10 -outfmt 5 -out ${name%.*}.out -num_threads 40
