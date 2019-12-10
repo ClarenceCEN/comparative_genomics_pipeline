@@ -41,7 +41,17 @@ Download the protein sequences into one file.
 
 	`/plus/work/soft/ORTHOMCLV1.4/orthomcl2speciesedit.pl all_orthomcl.out faa.list`
 
+7. Step 6 will generate a 'choose_coregene' file, which contains all the core-genes.
 
+	`cd choose_coregene`
+
+	Then we should concatenate all the sequences in order to do the alignment.
+
+	`cat *.faa > all.faa`
+
+	Re-orgnize the file, extract the core-genes for each strain. Use the 'cat_core.sh` file
+
+	`bash cat_core_genes.sh`
 
 ## Pan-genome Analysis
 
