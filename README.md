@@ -53,6 +53,22 @@ Download the protein sequences into one file.
 
 	`bash cat_core_genes.sh`
 
+8. Concatenate all the core-genes of strains.
+
+	`cat *.fna >all.fna`
+
+9. Use mafft to do the alignment
+
+	`nohup /plus/work/soft/mafft-7.313-with-extensions/scripts/mafft all.fna >all.fasta &`
+
+	This step will cost a long time.
+
+10. Generate the phylogenetic tree
+
+	`/plus/work/soft/bin/fasta2phylip.py all.fasta all.phy`
+
+	`/plus/work/soft/phylogeny/bin/phylo_treeedit.pl all.phy -type nj -d aa`
+
 ## Pan-genome Analysis
 
 1. `mkdir PGAP; cd PGAP` to create working directory
